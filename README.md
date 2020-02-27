@@ -12,8 +12,11 @@ To begin, you'll need to install `node.js` version >10:
 ```console
 $ npm install
 $ npm run build
+$ npm start
 ```
 
 A `dist` folder will be create containing the index.html and minified js file which performs the authentication.
+
+npm start - starts a local http server on port 9000 for local testing.
 
 This can be deployed to any webserver, amazon s3 or equivalent.
