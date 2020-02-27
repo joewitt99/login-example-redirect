@@ -1,12 +1,9 @@
-# login-handler-router
+# login-example-redirect
 
-This example provides a basic router solution for overriding the Okta landing page.  It uses OIDC and Okta groups to determine a landing page when a user goes directly to Okta's landing page.
+This example provides a basic custom login form.  It utilizes Okta's auth js library to perform username/password validation then a set cookie session redirect to send the user to a target RelayState.  This example supports the OIDC authorization flow which redirects the user to an idp.  You can also call specify the RelayState as a request parameter.
 
 Steps to configure:
-1. Request Federation Broker mode feature flag
-2. Create OIDC application in Okta
-3. Modify index.js to provide your application and tenant configurations 
-4. Deploy to webserver.
+1. open the src/index.js and update with your Okta tenant url (i.e. https://mydomain.oktapreview.com)
 
 ## Building and deployment
 
@@ -17,6 +14,6 @@ $ npm install
 $ npm run build
 ```
 
-A `dist` folder will be create containing the index.html and minified js file which performs the OIDC and router logic.
+A `dist` folder will be create containing the index.html and minified js file which performs the authentication.
 
 This can be deployed to any webserver, amazon s3 or equivalent.
